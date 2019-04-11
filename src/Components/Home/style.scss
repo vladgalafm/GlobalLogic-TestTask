@@ -1,0 +1,154 @@
+@import '../../Styles/vars';
+
+.home {
+  position: relative;
+  height: 100vh;
+  color: $light-text-color;
+  text-align: center;
+  background: $dark-theme url("img/bg.jpg") 50% 50% no-repeat;
+  background-size: cover;
+
+  &__top-bar {
+    padding: 30px 50px 0 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: auto;
+    font-family: $logo-font;
+    font-size: 2.631rem;
+  }
+
+  &__navigation {
+    position: relative;
+  }
+
+  &__nav-list {
+    display: flex;
+    font-size: 1.8rem;
+    transition-duration: 0.5s;
+  }
+
+  &__checkbox {
+    position: absolute;
+    z-index: 3;
+    display: none;
+    width: 40px;
+    height: 32px;
+    cursor: pointer;
+    margin-right: 20px;
+    opacity: 0;
+
+    &:checked ~ .home__burger-line {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+    }
+
+    &:checked ~ .home__burger-line--middle {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    &:checked ~ .home__burger-line--bottom {
+      transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    &:checked ~ .home__nav-list {
+      transform: translate(-98px, -60px);
+    }
+  }
+
+  &__burger-line {
+    position: relative;
+    top: 7px;
+    z-index: 2;
+    display: none;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: $light-text-color;
+    border-radius: 3px;
+    transform-origin: 4px 0;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+
+    &--bottom {
+      transform-origin: 0 100%;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 15px;
+    transition-duration: 0.25s;
+
+    &:hover {
+      box-shadow: inset 0 -2px 0 0 $light-text-color;
+    }
+  }
+
+  &__header-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    color: $header-title-color;
+  }
+
+  &__header {
+    padding-bottom: 2rem;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+  }
+
+  &__sub-header {
+    font-size: 3rem;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.25rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    &__top-bar {
+      padding: 30px 40px 0 40px;
+    }
+
+    &__nav-list {
+      position: absolute;
+      z-index: 1;
+      transform: translate(75px, -60px);
+      padding-top: 80px;
+      padding-bottom: 25px;
+      width: 170px;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    &__link {
+      &:hover {
+        color: $dark-theme;
+        box-shadow: none;
+        background-color: $light-text-color;
+      }
+    }
+
+    &__checkbox {
+      display: block;
+    }
+
+    &__burger-line {
+      display: block;
+    }
+
+    &__header {
+      font-size: 12vw;
+    }
+
+    &__sub-header {
+      font-size: 2.6rem;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../Styles/vars';
+
+.footer {
+  padding: 70px 0;
+  color: $light-text-color;
+  background-color: $dark-theme;
+
+  &__wrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  &__contacts {
+    font-size: 1.5rem;
+    letter-spacing: 0.08rem;
+
+    &:not(:last-of-type) {
+      padding-bottom: 8px;
+    }
+
+    &--bold {
+      font-weight: 600;
+    }
+  }
+
+  &__logo {
+    margin-top: -0.6rem;
+    font-family: $logo-font;
+    font-size: 4.947rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    &__wrapper {
+      width: 90%;
+    }
+
+    &__contacts {
+      font-size: 1.3rem;
+    }
+  }
+}

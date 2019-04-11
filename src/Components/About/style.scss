@@ -1,0 +1,86 @@
+@import '../../Styles/vars';
+
+.about {
+  padding: 70px 0;
+  border-bottom: 1px solid $section-border;
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  &__header {
+    padding-bottom: 3rem;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__goals {
+    text-align: right;
+  }
+
+  &__dreams {
+    text-align: left;
+  }
+
+  &__sub-header {
+    padding-bottom: 2rem;
+    font-size: 2.2rem;
+    font-style: italic;
+  }
+
+  &__description {
+    font-size: 1.6rem;
+  }
+
+  &__avatar-logo {
+    margin: 0 25px;
+    width: 174px;
+  }
+
+  @media screen and (max-width: 992px) {
+    &__content {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__goals {
+      width: calc(100% - 220px);
+      text-align: left;
+    }
+
+    &__dreams {
+      padding-top: 30px;
+    }
+
+    &__avatar-logo {
+      margin: 0;
+      order: -1;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &__wrapper {
+      width: 90%;
+    }
+
+    &__content {
+      justify-content: center;
+    }
+
+    &__sub-header {
+      text-align: center;
+    }
+
+    &__goals {
+      width: 100%;
+      padding-top: 30px;
+    }
+  }
+}
